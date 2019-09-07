@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Rock Paper Scissors Part 2
+    <title>Psychic Game
     </title>
 </head>
-
+<link href="reset.css">
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
 <body>
     <h1>Guess what letter I'm thinking of</h1>
     <div id="game">
@@ -19,6 +21,7 @@
     <p id="losses-text"></p>
     <p id="guessesSoFar-text"></p>
     <p id="guessesLeft-text"></p>
+    <p id="userGuess-text"></p>
 
 
     <script type="text/javascript">
@@ -29,14 +32,16 @@
         var losses = 0;
         var guessesLeft = 10;
         var guessesSoFar = [];
+        
 
         var userChoiceText = document.getElementById("userchoice-text");
         var computerChoiceText = document.getElementById("userchoice-text");
         var directionsText = document.getElementById("directions-text");
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
-        var guessesLeftText = document.getElementById("guessesLeft-text")
-        var guessesSoFarText = document.getElementById("guessesSoFar-text")
+        var guessesLeftText = document.getElementById("guessesLeft-text");
+        var guessesSoFarText = document.getElementById("guessesSoFar-text");
+        var userGuessText = document.getElementById("userGuess-text");
 
         // This function is run whenever the user presses a key.
         document.onkeyup = function (event) { //when you're on 'document' key up this function
@@ -60,20 +65,22 @@
             //   };
 
 
-            if (userguess === computerguess) {
-                console.log("You win")
-                win++
+            if (userGuess === computerGuess) {
+                console.log("You win");
+                win++;
             }
 
 
 
             else if (userGuess !== computerGuess) {
-                console.log("You're wrong")
-                guessesSoFar--
-                //how you can add their guess to the array called guessesSoFar
-                if (guessesSoFar === 0) {
+                console.log("You're wrong");
+                guessesSoFar.push(event.key);
+                guessesLeft--;
+            
+                if (guessesLeft === 0) {
+                    alert("Game over")
                     console.log("Game over");
-                    losses++
+                    losses++;
                 }
             }
 
