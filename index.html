@@ -70,6 +70,7 @@
 
             if (userGuess === computerGuess) {
                 console.log("You win");
+                alert("YOU WIN!");
                 win++;
             }
 
@@ -81,7 +82,7 @@
                 guessesLeft--;
             
                 if (guessesLeft === 0) {
-                    alert("Game over")
+                    alert("Game over");
                     console.log("Game over");
                     losses++;
                     var playAgain = confirm("Play Again?");
