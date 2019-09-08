@@ -6,9 +6,10 @@
     <title>Psychic Game
     </title>
 </head>
-<link href="reset.css">
+
 <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link href="reset.css">
 <body>
     <h1>Guess what letter I'm thinking of</h1>
     <div id="game">
@@ -33,6 +34,7 @@
         var guessesLeft = 10;
         var guessesSoFar = [];
         
+        
 
         var userChoiceText = document.getElementById("userchoice-text");
         var computerChoiceText = document.getElementById("userchoice-text");
@@ -42,6 +44,7 @@
         var guessesLeftText = document.getElementById("guessesLeft-text");
         var guessesSoFarText = document.getElementById("guessesSoFar-text");
         var userGuessText = document.getElementById("userGuess-text");
+        
 
         // This function is run whenever the user presses a key.
         document.onkeyup = function (event) { //when you're on 'document' key up this function
@@ -81,7 +84,15 @@
                     alert("Game over")
                     console.log("Game over");
                     losses++;
+                    var playAgain = confirm("Play Again?");
+                    if(playAgain === true){
+                        
+                        guessesLeft = 10;
+                        guessesSoFar = []
+                    }
                 }
+
+                
             }
 
 
