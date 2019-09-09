@@ -65,8 +65,9 @@
 
             if (userGuess === computerGuess) {
                 console.log("You win");
-                alert("YOU WIN!");
+                alert("YOU WIN! Press refresh to play again.");
                 win++;
+                winsText.textContent = win;
             }
 
 
@@ -80,12 +81,12 @@
                     alert("Game over");
                     console.log("Game over");
                     losses++;
-                    var playAgain = confirm("Play Again?");
+                        var playAgain = confirm("Play Again?");
                     if(playAgain === true){
-                        
                         guessesLeft = 10;
                         guessesSoFar = []
-                    }
+                    } 
+                    
                 }
 
                 
