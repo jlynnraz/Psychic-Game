@@ -9,8 +9,8 @@
 
 
 <h2>Technologies</h2>
-JavaScript
-HTML
+JavaScript <br>
+HTML <br>
 CSS
 
 
