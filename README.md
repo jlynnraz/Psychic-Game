@@ -19,7 +19,7 @@ Psychic Game was designed to show the basic power of JavaScript technology. The 
 * CSS
 
 ## Behind the Scenes
-A series of if's and else's determines whether or not your guess matches with the computer's.
+A series of if's and else if's determines whether or not your guess matches with the computer's.
 
 ~~~
  if (userGuess === computerGuess) {
